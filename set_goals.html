@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Goals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Fitness Tracker</h1>
+    </header>
+    <div class="container">
+        <h2>Set Goals</h2>
+        <form method="post">
+            <label for="goal">Goal:</label>
+            <input type="text" id="goal" name="goal" required>
+
+            <label for="target_date">Target Date:</label>
+            <input type="date" id="target_date" name="target_date" required>
+
+            <input type="submit" value="Set Goal">
+        </form>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Progress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Fitness Tracker</h1>
+    </header>
+    <div class="container">
+        <h2>Your Progress</h2>
+
+        <h2>Workouts</h2>
+        {% if workouts %}
+        <ul>
+            {% for workout in workouts %}
+            <li>{{ workout[1] }} for {{ workout[2] }} minutes on {{ workout[3] }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="no-data">No workouts recorded.</p>
+        {% endif %}
+
+        <h2>Goals</h2>
+        {% if goals %}
+        <ul>
+            {% for goal in goals %}
+            <li>{{ goal[1] }} by {{ goal[2] }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="no-data">No goals set.</p>
+        {% endif %}
+
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>
